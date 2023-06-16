@@ -2,15 +2,15 @@
 # - перший записує в список нову справу
 # - другий повертає всі записи
 # 2) протипізувати перше завдання
-
-def notebook():
-    todo_list: list = []
+from typing import Callable
+def notebook() -> Callable[[str], None] [[None], list[str]]:
+    todo_list: list[str] = []
 
     def add_todo(todo: str) -> None:
         nonlocal todo_list
         todo_list.append(todo)
 
-    def get_all() -> list:
+    def get_all() -> list[str]:
         nonlocal todo_list
         return todo_list.copy()
 
